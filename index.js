@@ -45,8 +45,9 @@ Use getFinals to do the following:
 */
 
 function getFinals(arr) {
-    const bubba = arr.filter(i => i.Stage === 'Final');
-    return bubba;
+    // const bubba = arr.filter(i => i.Stage === 'Final');
+    // return bubba;
+    return arr.filter(i => i.Stage === 'Final');
         }
 
  console.log(getFinals(fifaData));
@@ -59,13 +60,14 @@ Use the higher-order function called getYears to do the following:
 3. Return an array called years containing all of the years in the getFinals data set*/
 
 function getYears(arr, callBack) {
-    const years = [];
-    const finalArr = callBack(arr);
-        for (let i = 0; i < finalArr.length; i++){
-            years.push(finalArr[i].Year);
-            //console.log(finalArr[i].Year);
-        }
-    return years;
+    // const years = [];
+    // const finalArr = callBack(arr);
+    //     for (let i = 0; i < finalArr.length; i++){
+    //         years.push(finalArr[i].Year);
+    //         //console.log(finalArr[i].Year);
+    //     }
+    //return years;
+    return callBack(arr).map(i => i.Year);
 }
 
 console.log(getYears(fifaData, getFinals));
